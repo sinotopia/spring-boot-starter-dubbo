@@ -14,7 +14,8 @@ import com.hazelcast.instance.HazelcastInstanceFactory;
 import java.util.*;
 
 /**
- * Created by wuyu on 2017/4/24.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class HazelcastRegistry extends FailbackRegistry {
 
@@ -27,7 +28,7 @@ public class HazelcastRegistry extends FailbackRegistry {
     public HazelcastRegistry(URL url) {
         super(url);
 
-        String username = url.getParameter("username","dubbo");
+        String username = url.getParameter("username", "dubbo");
 
         Config config = new Config(username);
 
@@ -55,7 +56,7 @@ public class HazelcastRegistry extends FailbackRegistry {
 
             }
         });
-        this.replicatedMap = hazelcastInstance.getReplicatedMap(username+"-dubbo-registered");
+        this.replicatedMap = hazelcastInstance.getReplicatedMap(username + "-dubbo-registered");
         this.nodeId = hazelcastInstance.getCluster().getLocalMember().getUuid();
         replicatedMap.put(nodeId, new LinkedHashSet<String>());
         replicatedMap.addEntryListener(new EntryAdapter<String, Set<String>>() {

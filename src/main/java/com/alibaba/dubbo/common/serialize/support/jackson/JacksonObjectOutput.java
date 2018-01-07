@@ -6,7 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 
 /**
- * Created by wuyu on 2017/2/9.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class JacksonObjectOutput implements ObjectOutput {
 
@@ -83,7 +84,7 @@ public class JacksonObjectOutput implements ObjectOutput {
     @Override
     public void writeObject(Object obj) throws IOException {
         if (obj == null) {
-            return ;
+            return;
         } else if (obj instanceof String) {
             writer.write((String) obj);
         } else {

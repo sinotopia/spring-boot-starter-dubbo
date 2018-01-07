@@ -4,6 +4,9 @@ import java.util.Date;
 
 /**
  * Repository storing data used by the gateway's rate limiting filter.
+ *
+ * @author walkman
+ * @date 2017/4/19
  */
 public interface RateLimitingRepository {
 

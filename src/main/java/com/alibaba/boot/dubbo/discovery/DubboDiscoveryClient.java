@@ -28,8 +28,10 @@ import javax.annotation.PreDestroy;
 import java.lang.reflect.Field;
 import java.util.*;
 
+
 /**
- * Created by wuyu on 2017/4/22.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class DubboDiscoveryClient implements DiscoveryClient, InitializingBean {
 
@@ -150,10 +152,14 @@ public class DubboDiscoveryClient implements DiscoveryClient, InitializingBean {
             if (registry instanceof ZookeeperRegistry) {
                 ZookeeperClient zookeeperClient = getZookeeperClient((ZookeeperRegistry) registry);
                 List<String> children = zookeeperClient.getChildren("/dubbo");
-                if (children == null) continue;
+                if (children == null) {
+                    continue;
+                }
                 for (String service : children) {
                     List<String> providers = zookeeperClient.getChildren("/dubbo/" + service + "/providers");
-                    if (providers == null) continue;
+                    if (providers == null) {
+                        continue;
+                    }
                     for (String url : providers) {
                         urls.add(URL.valueOf(URL.decode(url)));
                     }

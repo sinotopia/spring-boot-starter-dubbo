@@ -24,8 +24,10 @@ import java.lang.reflect.Type;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+
 /**
- * Created by wuyu on 2017/5/7.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class ServiceHandler extends TextWebSocketHandler {
 

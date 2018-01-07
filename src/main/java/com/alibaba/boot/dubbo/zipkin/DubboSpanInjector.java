@@ -6,10 +6,13 @@ import org.springframework.cloud.sleuth.SpanInjector;
 
 import java.util.Map;
 
+
 /**
- * Created by wuyu on 2017/5/3.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class DubboSpanInjector implements SpanInjector<RpcContext> {
+
     @Override
     public void inject(Span span, RpcContext carrier) {
         Map<String, String> attachments = carrier.getAttachments();
@@ -26,7 +29,6 @@ public class DubboSpanInjector implements SpanInjector<RpcContext> {
             attachments.put(Span.PARENT_ID_NAME, Span.idToHex(parentId));
         }
         attachments.put(Span.PROCESS_ID_NAME, span.getProcessId());
-
     }
 
     private Long getParentId(Span span) {

@@ -28,8 +28,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+
 /**
- * Created by wuyu on 2017/4/28.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class DubboGenericService implements ApplicationContextAware {
 
@@ -101,7 +103,8 @@ public class DubboGenericService implements ApplicationContextAware {
         if (genericService != null) {
             return genericService;
         }
-        ReferenceConfig<GenericService> reference = new ReferenceConfig<GenericService>(); // 该实例很重量，里面封装了所有与注册中心及服务提供方连接，请缓存
+        // 该实例很重量，里面封装了所有与注册中心及服务提供方连接，请缓存
+        ReferenceConfig<GenericService> reference = new ReferenceConfig<GenericService>();
         String method = config.getMethod();
         String service = method.substring(0, method.lastIndexOf("."));
         reference.setInterface(service);
@@ -113,12 +116,14 @@ public class DubboGenericService implements ApplicationContextAware {
         if (config.getGroup() != null && (!config.getGroup().equalsIgnoreCase("defaultGroup"))) {
             reference.setGroup(config.getGroup());
         }
-        reference.setGeneric(true); // 声明为泛化接口
+        // 声明为泛化接口
+        reference.setGeneric(true);
         reference.setProtocol("dubbo");
         genericService = reference.get();
         referenceBeans.add(reference);
         genericServiceMap.put(key, genericService);
-        return genericService; // 用com.alibaba.dubbo.rpc.service.GenericService可以替代所有接口引用
+        // 用com.alibaba.dubbo.rpc.service.GenericService可以替代所有接口引用
+        return genericService;
     }
 
     private String sliceKey(GenericServiceConfig config) {

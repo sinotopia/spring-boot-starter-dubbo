@@ -25,7 +25,8 @@ import org.springframework.web.socket.config.annotation.DelegatingWebSocketConfi
 import java.util.List;
 
 /**
- * Created by wuyu on 2017/4/22.
+ * @author walkman
+ * @date 2017/4/19
  */
 @AutoConfigureAfter(DubboAutoConfiguration.class)
 public class DubboProxyConfiguration {
@@ -36,7 +37,6 @@ public class DubboProxyConfiguration {
         return new DubboApplicationEventPublisher();
     }
 
-
     @Bean
     @ConditionalOnProperty(value = "spring.dubbo.generic-prefix")
     public DubboGenericService dubboGenericProxyService(DubboProperties dubboProperties, ZuulProperties zuulProperties, ApplicationContext applicationContext) {
@@ -45,13 +45,11 @@ public class DubboProxyConfiguration {
         return new DubboGenericService();
     }
 
-
     @Bean
     @ConditionalOnBean(DubboGenericService.class)
     public DubboGenericController dubboGenericProxy() {
         return new DubboGenericController();
     }
-
 
     @Bean
     @ConditionalOnMissingBean(DiscoveryClient.class)

@@ -5,12 +5,12 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * Created by wuyu on 2017/5/6.
+ * @author walkman
+ * @date 2017/4/19
  */
-public class Rate implements Serializable{
+public class Rate implements Serializable {
 
     private static final long serialVersionUID = 1927816293512124L;
-
 
     private String timeUnit;
 

@@ -6,17 +6,27 @@ import com.alibaba.dubbo.config.RegistryConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
+/**
+ * @author walkman
+ * @date 2017/4/19
+ */
 @ConfigurationProperties(prefix = "spring.dubbo")
 public class DubboProperties {
 
+    /**
+     *
+     */
     private String scan = "";
 
-    //全局超时时间
+    /**
+     * 全局超时时间
+     */
     private Integer timeout = 1000;
 
-    //泛化服务代理路径前缀
+    /**
+     * 泛化服务代理路径前缀
+     */
     private String genericPrefix = "/proxy/";
-
 
     @NestedConfigurationProperty
     private ApplicationConfig application;

@@ -8,10 +8,10 @@ import org.springframework.cloud.sleuth.Span;
 import org.springframework.cloud.sleuth.Tracer;
 
 /**
- * Created by wuyu on 2017/5/3.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class ConsumerSpan implements Filter {
-
 
     @Autowired
     private Tracer tracer;
@@ -19,6 +19,7 @@ public class ConsumerSpan implements Filter {
     @Autowired
     private DubboSpanInjector dubboSpanInjector;
 
+    @Override
     public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
         URL url = invoker.getUrl();
         String spanName = url.getServiceInterface() + "." + invocation.getMethodName();

@@ -12,7 +12,8 @@ import com.netflix.ribbon.RibbonTransportFactory;
 import com.netflix.ribbon.proxy.RibbonDynamicProxy;
 
 /**
- * Created by wuyu on 2016/4/6.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class RibbonProtocol extends FeignProtocol {
 
@@ -22,7 +23,6 @@ public class RibbonProtocol extends FeignProtocol {
         final int timeout = url.getParameter(Constants.TIMEOUT_KEY, Constants.DEFAULT_TIMEOUT);
         final int connections = url.getParameter(Constants.CONNECTIONS_KEY, 20);
         final int retries = url.getParameter(Constants.RETRIES_KEY, 0);
-
 
         String schema = "http://";
         if (url.getProtocol().equalsIgnoreCase("ribbons")) {

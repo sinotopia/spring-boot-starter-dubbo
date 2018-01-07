@@ -6,8 +6,10 @@ import com.alibaba.dubbo.rpc.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.sleuth.Tracer;
 
+
 /**
- * Created by wuyu on 2017/5/3.
+ * @author walkman
+ * @date 2017/4/19
  */
 @Activate(group = {Constants.PROVIDER, Constants.CONSUMER}, value = "zipkinFilter")
 public class ZipkinFilter implements Filter {

@@ -2,7 +2,6 @@ package com.alibaba.boot.dubbo.discovery;
 
 import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.registry.NotifyListener;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.event.InstanceRegisteredEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
@@ -10,7 +9,8 @@ import org.springframework.context.ApplicationEventPublisherAware;
 import java.util.List;
 
 /**
- * Created by wuyu on 2017/4/23.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class DubboApplicationEventPublisher implements ApplicationEventPublisherAware, NotifyListener {
 

@@ -10,8 +10,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+
 /**
- * Created by wuyu on 2017/2/9.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class JacksonSerialization implements Serialization {
 

@@ -5,7 +5,8 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import java.lang.annotation.*;
 
 /**
- * Created by wuyu on 2016/10/31.
+ * @author walkman
+ * @date 2017/4/19
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

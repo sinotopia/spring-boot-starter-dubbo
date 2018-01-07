@@ -53,10 +53,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by wuyu on 2016/4/6.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class FeignProtocol extends AbstractProxyProtocol {
-
 
     private static ObjectFactory<HttpMessageConverters> objectFactory = new ObjectFactory<HttpMessageConverters>() {
         @Override

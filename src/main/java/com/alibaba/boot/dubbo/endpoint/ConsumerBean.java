@@ -3,19 +3,22 @@ package com.alibaba.boot.dubbo.endpoint;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author walkman
+ * @date 2017/4/19
+ */
 public class ConsumerBean {
 
-    private String       group;
-    private String       version;
-    private String       interfaceName;
-    private  Map<String, List<String>> methodNames;
+    private String group;
+    private String version;
+    private String interfaceName;
+    private Map<String, List<String>> methodNames;
     private Integer timeout;
     private Integer connections;
     private String protocol;
     private Integer retries;
     private Integer actives;
     private String loadbalance;
-
 
     public String getGroup() {
         return group;
@@ -41,7 +44,6 @@ public class ConsumerBean {
         this.interfaceName = interfaceName;
     }
 
-
     public Integer getTimeout() {
         return timeout;
     }
@@ -65,8 +67,6 @@ public class ConsumerBean {
     public void setLoadbalance(String loadbalance) {
         this.loadbalance = loadbalance;
     }
-
-
 
     public Integer getActives() {
         return actives;
@@ -92,13 +92,11 @@ public class ConsumerBean {
         this.protocol = protocol;
     }
 
-
-    public  Map<String, List<String>> getMethodNames() {
+    public Map<String, List<String>> getMethodNames() {
         return methodNames;
     }
 
-
-    public void setMethodNames( Map<String, List<String>> methodNames) {
+    public void setMethodNames(Map<String, List<String>> methodNames) {
         this.methodNames = methodNames;
     }
 }

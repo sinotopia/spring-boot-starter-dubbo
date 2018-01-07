@@ -11,7 +11,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Zuul filter for limiting the number of HTTP calls per client.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class RateLimitingFilter extends ZuulFilter {
 

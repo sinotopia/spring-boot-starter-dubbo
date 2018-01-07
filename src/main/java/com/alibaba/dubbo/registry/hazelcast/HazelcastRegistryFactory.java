@@ -5,7 +5,8 @@ import com.alibaba.dubbo.registry.Registry;
 import com.alibaba.dubbo.registry.support.AbstractRegistryFactory;
 
 /**
- * Created by wuyu on 2017/4/24.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class HazelcastRegistryFactory extends AbstractRegistryFactory {
 

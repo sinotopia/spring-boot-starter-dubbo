@@ -9,8 +9,10 @@ import org.springframework.util.StringUtils;
 import java.util.Map;
 import java.util.Random;
 
+
 /**
- * Created by wuyu on 2017/5/3.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class DubboSpanExtractor implements SpanExtractor<RpcContext> {
 

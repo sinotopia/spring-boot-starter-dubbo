@@ -11,7 +11,8 @@ import org.springframework.cloud.sleuth.sampler.NeverSampler;
 import java.util.Map;
 
 /**
- * Created by wuyu on 2017/5/3.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class ProviderSpan implements Filter {
 

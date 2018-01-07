@@ -23,15 +23,16 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.concurrent.ConcurrentMap;
 
+
 /**
- * Created by wuyu on 2017/4/19.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class AnnotationBeanConfiguration extends AnnotationBean implements ApplicationListener<ContextRefreshedEvent> {
 
     private ApplicationContext applicationContext;
 
     private String annotationPackage;
-
 
     /**
      * 去除Dubbo扫描com.alibaba.dubbo.config.annotation.Service，仅把Service做为描述接口注解使用
@@ -123,11 +124,11 @@ public class AnnotationBeanConfiguration extends AnnotationBean implements Appli
                         for (ProtocolConfig protocolConfig : beansOfType.values()) {
                             if (protocolConfig.getName().equalsIgnoreCase(protocol)) {
                                 protocolConfigs.add(protocolConfig);
-                                flag=true;
+                                flag = true;
                             }
                         }
 
-                        if(!flag){
+                        if (!flag) {
                             protocolConfigs.add(new ProtocolConfig(protocol));
                         }
                     }
@@ -215,9 +216,10 @@ public class AnnotationBeanConfiguration extends AnnotationBean implements Appli
 
     private Set<String> protocolKeys = new HashSet<>();
 
-
     protected void autowired(Object object) {
-        if (object == null) return;
+        if (object == null) {
+            return;
+        }
         Class<?> targetClass = AopUtils.getTargetClass(object);
         for (Field field : targetClass.getDeclaredFields()) {
             Autowired autowired = field.getAnnotation(Autowired.class);
@@ -259,7 +261,7 @@ public class AnnotationBeanConfiguration extends AnnotationBean implements Appli
         }
 
         for (String filterKey : filterKeys) {
-            if(StringUtils.isEmpty(filterKey)){
+            if (StringUtils.isEmpty(filterKey)) {
                 continue;
             }
             Filter filter = ExtensionLoader.getExtensionLoader(Filter.class).getExtension(filterKey);
@@ -267,7 +269,7 @@ public class AnnotationBeanConfiguration extends AnnotationBean implements Appli
         }
 
         for (String protocolKey : protocolKeys) {
-            if(StringUtils.isEmpty(protocolKey)){
+            if (StringUtils.isEmpty(protocolKey)) {
                 continue;
             }
             Protocol protocol = ExtensionLoader.getExtensionLoader(Protocol.class).getExtension(protocolKey);

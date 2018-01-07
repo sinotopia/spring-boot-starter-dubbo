@@ -3,14 +3,18 @@ package com.alibaba.boot.dubbo.endpoint;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author walkman
+ * @date 2017/4/19
+ */
 public class ProviderBean {
 
-    private String       target;
-    private String       interfaceName;
-    private String       version;
-    private String       group;
-    private Integer      timeout;
-    private Map<String,List<String>> methodNames;
+    private String target;
+    private String interfaceName;
+    private String version;
+    private String group;
+    private Integer timeout;
+    private Map<String, List<String>> methodNames;
 
     private Integer connections;
     private String protocol;

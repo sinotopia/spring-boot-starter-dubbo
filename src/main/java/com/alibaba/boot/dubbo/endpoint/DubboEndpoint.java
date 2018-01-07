@@ -20,6 +20,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ * @author walkman
+ * @date 2017/4/19
+ */
 public class DubboEndpoint extends AbstractEndpoint<Map<String, Object>> implements ApplicationContextAware {
 
     private ApplicationContext context;

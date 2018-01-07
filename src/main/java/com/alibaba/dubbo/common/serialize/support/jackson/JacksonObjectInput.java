@@ -9,7 +9,8 @@ import java.io.*;
 import java.lang.reflect.Type;
 
 /**
- * Created by wuyu on 2017/2/9.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class JacksonObjectInput implements ObjectInput {
 
@@ -32,32 +33,32 @@ public class JacksonObjectInput implements ObjectInput {
 
     @Override
     public byte readByte() throws IOException {
-        return objectMapper.convertValue(readLine(),byte.class);
+        return objectMapper.convertValue(readLine(), byte.class);
     }
 
     @Override
     public short readShort() throws IOException {
-        return objectMapper.convertValue(readLine(),short.class);
+        return objectMapper.convertValue(readLine(), short.class);
     }
 
     @Override
     public int readInt() throws IOException {
-        return objectMapper.convertValue(readLine(),int.class);
+        return objectMapper.convertValue(readLine(), int.class);
     }
 
     @Override
     public long readLong() throws IOException {
-        return objectMapper.convertValue(readLine(),long.class);
+        return objectMapper.convertValue(readLine(), long.class);
     }
 
     @Override
     public float readFloat() throws IOException {
-        return objectMapper.convertValue(readLine(),float.class);
+        return objectMapper.convertValue(readLine(), float.class);
     }
 
     @Override
     public double readDouble() throws IOException {
-        return objectMapper.convertValue(readLine(),double.class);
+        return objectMapper.convertValue(readLine(), double.class);
     }
 
     @Override
@@ -77,13 +78,13 @@ public class JacksonObjectInput implements ObjectInput {
 
     @Override
     public <T> T readObject(Class<T> cls) throws IOException, ClassNotFoundException {
-        return objectMapper.readValue(readLine(),cls);
+        return objectMapper.readValue(readLine(), cls);
     }
 
     @Override
     public <T> T readObject(Class<T> cls, Type type) throws IOException, ClassNotFoundException {
         JavaType javaType = TypeFactory.defaultInstance().constructType(type);
-        return objectMapper.readValue(readLine(),javaType);
+        return objectMapper.readValue(readLine(), javaType);
     }
 
     private String readLine() throws IOException, EOFException {

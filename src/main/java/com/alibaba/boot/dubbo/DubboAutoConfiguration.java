@@ -11,6 +11,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * @author walkman
+ * @date 2017/4/19
+ */
 @EnableConfigurationProperties(DubboProperties.class)
 public class DubboAutoConfiguration {
 

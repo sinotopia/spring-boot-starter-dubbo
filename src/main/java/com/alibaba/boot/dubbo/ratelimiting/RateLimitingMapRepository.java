@@ -6,6 +6,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Repository storing data used by the gateway's rate limiting filter.
+ *
+ * @author walkman
+ * @date 2017/4/19
  */
 public class RateLimitingMapRepository implements RateLimitingRepository {
 
@@ -18,6 +21,7 @@ public class RateLimitingMapRepository implements RateLimitingRepository {
         this.store = store;
     }
 
+    @Override
     public void incrementCounter(String id, String timeUnit, Date time) {
         Rate rateLimiting = store.get(id);
         if (rateLimiting == null) {
@@ -30,6 +34,7 @@ public class RateLimitingMapRepository implements RateLimitingRepository {
         rateLimiting.getAtomicLong().incrementAndGet();
     }
 
+    @Override
     public long getCounter(String id, String timeUnit, Date time) {
         Rate rateLimiting = store.get(id);
 

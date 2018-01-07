@@ -10,7 +10,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
- * Created by wuyu on 2017/4/21.
+ * @author walkman
+ * @date 2017/4/21
  */
 public class DubboRouteLocator extends DiscoveryClientRouteLocator {
 

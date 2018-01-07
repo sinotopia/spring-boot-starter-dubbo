@@ -23,8 +23,10 @@ import org.springframework.util.StringUtils;
 import java.lang.annotation.Annotation;
 import java.util.Set;
 
+
 /**
- * Created by wuyu on 2017/4/18.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class DubboClientsRegistrar implements ImportBeanDefinitionRegistrar, ResourceLoaderAware {
 

@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 
+
 /**
- * Created by wuyu on 2017/4/28.
+ * @author walkman
+ * @date 2017/4/19
  */
 @RequestMapping(value = "${spring.dubbo.genericPrefix:/proxy}")
 @ResponseBody

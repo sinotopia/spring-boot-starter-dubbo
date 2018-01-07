@@ -11,8 +11,10 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
+
 /**
- * Created by wuyu on 2017/5/7.
+ * @author walkman
+ * @date 2017/4/19
  */
 public class GenericProxyHandler extends TextWebSocketHandler {
 
@@ -36,7 +38,7 @@ public class GenericProxyHandler extends TextWebSocketHandler {
             jsonNode = dubboGenericProxyService.proxy(genericServiceConfig);
         } catch (Exception e) {
             e.printStackTrace();
-            jsonNode = JsonRpcUtil.createErrorResponse(objectMapper,"2.0", genericServiceConfig != null ? genericServiceConfig.getId() : null, 32603, e.getMessage(), null);
+            jsonNode = JsonRpcUtil.createErrorResponse(objectMapper, "2.0", genericServiceConfig != null ? genericServiceConfig.getId() : null, 32603, e.getMessage(), null);
         }
 
         return jsonNode;
